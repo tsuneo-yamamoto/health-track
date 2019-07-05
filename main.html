@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Metadados -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML,CSS,XHTML,Javascript">
+    <meta name="author" content="Tsuneo">
+    <meta name="description" content="Bootstrap Template">
+    <!-- Bootstrap 4 | Local file -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts: CDN | Lobster, Montserrat -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Title -->
+    <title>Health Track</title>
+</head>
+<body class="bg-green">
+
+<!-- HEADER -->
+<header class="container-fluid position-fixed bg-dark d-flex justify-content-end align-items-center">
+    <span class="logo mr-auto" style="font-size: 1.5em;">Health Track</span>
+    <span class="align-middle nav-link" data-toggle="modal" data-target=".modal-perfil">Perfil</span>
+    <span class="align-middle nav-link" onclick="location.href='index.html';">Sair</span>
+    <img class="mini-avatar" src="img/tsuneo-avatar-pb-500x500.jpg" alt="mini avatar"/>
+</header>
+
+<!-- MAIN CONTAINER -->
+<div class="container main-container">
+
+    <!-- PERFIL -->
+    <div class="row d-flex flex-column justify-content-center align-items-center text-dark">
+        <div class="row">
+            <img src="img/tsuneo-avatar-pb-500x500.jpg" style="width: 84px; height: 84px; border-radius: 50%;" alt="Imagem de Avatar">
+        </div>
+        <div class="row font-weight-bold">
+            <h5 class="font-weight-bold">Leonardo Yamamoto</h4>
+        </div>
+        <div class="row">
+            <span class="span-2">34 anos</span>
+        </div>
+        <div class="row">
+            <span class="span-2">1.70m altura</span>
+        </div>
+    </div>
+
+    <!-- PESO -->
+    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-peso">
+        <div class="container-fluid">
+            <div class="row pb-2">
+                <!-- ICONE Peso -->
+                <div class="col-md-2 d-flex justify-content-center">
+                    <img class="icon" src="img/Peso-Doodle.png" alt="Icone de Peso" />
+                </div>
+                <!-- Peso Atual -->
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-1">75.9kg</span>
+                </div>
+                <!-- IMC -->
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">IMC: 26.3 | Sobrepeso</span>
+                </div>
+                <!-- Ultimo Registro de Peso -->
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span>Último registro: 07/06/2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRÁFICO DE PESO -->
+    <div class="row d-flex justify-content-center align-items-center">
+        <div id="chartPeso" style="width: 90%"></div>
+    </div>
+
+    <!-- ALIMENTOS CONSUMIDOS -->
+    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-alimento">
+        <div class="container-fluid">
+
+            <div class="row pb-2">
+                <!-- ICONE Alimento -->
+                <div class="col-md-2 d-flex justify-content-center">
+                    <img src="img/Alimentos-Doodle.png" alt="Icone de Alimento" />
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">(Fruta) Maçã</span>
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">130g | 85 kcal</span>
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span>Último registro: 07/06/2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRESSÃO ARTERIAL -->
+    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-pressao">
+        <div class="container-fluid">
+
+            <div class="row pb-2">
+                <!-- ICONE Pressão Arterial -->
+                <div class="col-md-2 d-flex justify-content-center">
+                    <img src="img/Pressao-Arterial-Doodle.png" alt="Icone de Pressão Arterial" />
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">120 / 80mmHg</span>
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">Normal</span>
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span>Último registro: 07/06/2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ATIVIDADE FÍSICA -->
+    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-atividade">
+        <div class="container-fluid">
+
+            <div class="row pb-2">
+                <!-- ICONE Atividade Física -->
+                <div class="col-md-2 d-flex justify-content-center">
+                    <img src="img/Atividades-Fisicas-Doodle.png" alt="Icone de Atividade Física" />
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">Corrida</span>
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span class="span-2">1h | 744 cal</span>
+                </div>
+                <div class="col-md d-flex justify-content-center align-items-center">
+                    <span>Último registro: 07/06/2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal | Registro de Peso -->
+<div class="modal fade modal-peso" tabindex="-1" role="dialog" aria-labelledby="modalPeso" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content bg-light">
+            <!-- HEADER -->
+            <div class="modal-header bg-purple rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Registro de Peso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- CONTENT -->
+            <div class="modal-body">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <!-- Tabela -->
+                    <table class="table table-responsive-sm text-center">
+                        <thead class="bg-purple text-light">
+                            <!-- Cabeçalho da Tabela -->
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Peso(kg)</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Remover</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark">
+                            <!-- Exemplo 1 -->
+                            <tr>
+                                <td>07/06/19</td>
+                                <td>75.9</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 2 -->
+                            <tr>
+                                <td>21/05/19</td>
+                                <td>76.6</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 3 -->
+                            <tr>
+                                <td>29/04/19</td>
+                                <td>77.0</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 4 -->
+                            <tr>
+                                <td>23/03/19</td>
+                                <td>77.4</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 5 -->
+                            <tr>
+                                <td>24/02/19</td>
+                                <td>77.0</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 6 -->
+                            <tr>
+                                <td>26/01/19</td>
+                                <td>77.6</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 7 -->
+                            <tr>
+                                <td>29/12/18</td>
+                                <td>78.4</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 8 -->
+                            <tr>
+                                <td>30/11/18</td>
+                                <td>79.4</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 9 -->
+                            <tr>
+                                <td>23/10/18</td>
+                                <td>80.0</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 10 -->
+                            <tr>
+                                <td>21/09/18</td>
+                                <td>81.0</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 11 -->
+                            <tr>
+                                <td>25/07/18</td>
+                                <td>82.4</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 12 -->
+                            <tr>
+                                <td>18/06/18</td>
+                                <td>83.0</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FOOTER -->
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-purple text-light" data-dismiss="modal" onclick="document.location.reload(true);">Fechar</button>
+                <button type="button" type="submit" class="btn bg-purple text-light" data-toggle="modal" data-target=".modal-novo-peso">Novo registro</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal | Novo Registro Peso -->
+<div class="modal fade modal-novo-peso" tabindex="-1" role="dialog" aria-labelledby="modalNovoPeso" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <form id="form_registro_peso">
+            <div class="modal-header bg-green rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Novo Registro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-group">
+                <!-- Container -->
+                <div class="container-fluid">
+                   <!-- Peso atual -->
+                   <label for="input_peso_registro_peso"></label>
+                   <input id="input_peso_registro_peso" type="text" class="form-control" placeholder="Peso Atual">
+                   <span id="span_ajuda_peso_registro_peso" class="span-ajuda text-danger align-self-start">*Indique seu peso corretamente. (Ex: 74.5)</span>
+                   <!-- Data do registro -->
+                   <label for="input_data_registro_peso" class="text-dark"></label>
+                   <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Data da Pesagem</div>
+                    </div>
+                    <input id="input_data_registro_peso" type="text" placeholder="dd/mm/aaaa" class="form-control">
+                    </div>
+                    <span id="span_ajuda_data_registro_peso" class="span-ajuda text-danger align-self-start">*Use a formatação DD/MM/AAAA e não se esqueça da /</span>
+                </div>
+            </div>
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-green text-light" data-dismiss="modal">Fechar</button>
+                <button id="btn_salvar_peso" type="button" class="btn bg-green text-light">Salvar peso</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal | Alimentos Consumidos -->
+<div class="modal fade modal-alimento" tabindex="-1" role="dialog" aria-labelledby="modalAlimento" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <!-- HEADER -->
+            <div class="modal-header bg-purple rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Alimentos Consumidos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- CONTENT -->
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <table class="table table-responsive-sm text-center">
+                        <thead class="bg-purple text-light">
+                           <tr>
+                               <th>Registro</th>
+                               <th>Tipo</th>
+                               <th>Descrição</th>
+                               <th>Calorias</th>
+                               <th>Editar</th>
+                               <th>Remover</th>
+                           </tr>
+                        </thead>
+                        <tbody class="text-dark">
+                            <!-- Exemplo 1 -->
+                            <tr>
+                                <td>07/06/19</td>
+                                <td>Fruta</td>
+                                <td>Maçã (130g)</td>
+                                <td>85 kcal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 2 -->
+                            <tr>
+                                <td>07/06/19</td>
+                                <td>Almoço</td>
+                                <td>Feijoada, Suco de Limão, Picole</td>
+                                <td>1.189kcal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 3 -->
+                            <tr>
+                                <td>01/06/19</td>
+                                <td>Lanche Leve</td>
+                                <td>Tigela de cereal com 1 banana.</td>
+                                <td>284 kcal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 4 -->
+                            <tr>
+                                <td>01/06/19</td>
+                                <td>Jantar</td>
+                                <td>Arroz, Filé de Frango e Salada</td>
+                                <td>809 kcal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 1 -->
+                            <tr>
+                                <td>01/06/19</td>
+                                <td>Café da Manhã</td>
+                                <td>Maçã, Xícara de café e uma fatia de pão com requeijão</td>
+                                <td>185 kcal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FOOTER -->
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-purple text-light" data-dismiss="modal" onclick="document.location.reload(true);">Fechar</button>
+                <button type="button" type="submit" class="btn bg-purple text-light" data-toggle="modal" data-target=".modal-novo-alimento">Adicionar Refeição</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal | Novo Registro Refeição -->
+<div class="modal fade modal-novo-alimento" tabindex="-1" role="dialog" aria-labelledby="modalNovoAlimento" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <form id="form_registro_alimento">
+            <div class="modal-header bg-green rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Nova Refeição</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-group">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <!-- Tipo de Refeição -->
+                    <label for="select_tipo_registro_alimento"></label>
+                    <select id="select_tipo_registro_alimento" class="form-control">
+                        <option value="">Tipo de refeição</option>
+                        <option value="cafe-da-manha">Café da manhã</option>
+                        <option value="almoco">Almoço</option>
+                        <option value="jantar">Jantar</option>
+                        <option value="lanche-leve">Lanche leve</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                    <span id="span_ajuda_tipo_registro_alimento" class="span-ajuda text-danger align-self-start">*Selecione um tipo de refeição</span>
+                    <!-- Descrição -->
+                    <label for="textarea_descricao_registro_alimento"></label>
+                    <textarea id="textarea_descricao_registro_alimento" rows="5" class="form-control" placeholder="Descrição da refeição"></textarea>
+                    <span id="span_ajuda_descricao_registro_alimento" class="span-ajuda text-danger align-self-start">*Escreva uma descrição sobre a refeição</span>
+                    <!-- Data do registro -->
+                    <label for="input_data_registro_alimento" class="text-dark"></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">Data da refeição</div>
+                        </div>
+                        <input id="input_data_registro_alimento" type="text" class="form-control" placeholder="dd/mm/aaaa">
+                    </div>
+                    <span id="span_ajuda_data_registro_alimento" class="span-ajuda text-danger align-self-start">*Use a formatação DD/MM/AAAA e não se esqueça da /</span>
+                    <!-- Calorias -->
+                    <label for="input_calorias_registro_alimento"></label>
+                    <input id="input_calorias_registro_alimento" type="text" class="form-control" placeholder="Calorias">
+                    <span id="span_ajuda_calorias_registro_alimento" class="span-ajuda text-danger align-self-start">*Informe valor de calorias aproximadas da refeição</span>
+                </div>
+            </div>
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-green text-light" data-dismiss="modal">Fechar</button>
+                <button id="btn_salvar_alimento" type="button" class="btn bg-green text-light">Salvar refeição</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal | Pressão Arterial -->
+<div class="modal fade modal-pressao" tabindex="-1" role="dialog" aria-labelledby="modalPressao" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <!-- HEADER -->
+            <div class="modal-header bg-purple rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Pressão Arterial</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- CONTENT -->
+            <div class="modal-body">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <!-- Tabela -->
+                    <table class="table table-responsive-sm text-center">
+                        <thead class="bg-purple text-light">
+                            <!-- Cabeçalho da Tabela -->
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Sistólica(mmHg)</th>
+                                <th scope="col">Diastólica(mmHg)</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Remover</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark">
+                            <!-- Exemplo 1 -->
+                            <tr>
+                                <td>07/06/19</td>
+                                <td>120</td>
+                                <td>80</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 2 -->
+                            <tr>
+                                <td>14/05/19</td>
+                                <td>116</td>
+                                <td>81</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 3 -->
+                            <tr>
+                                <td>09/03/19</td>
+                                <td>115</td>
+                                <td>81</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 4 -->
+                            <tr>
+                                <td>22/02/19</td>
+                                <td>117</td>
+                                <td>80</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 5 -->
+                            <tr>
+                                <td>07/01/19</td>
+                                <td>120</td>
+                                <td>80</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 6 -->
+                            <tr>
+                                <td>11/12/18</td>
+                                <td>118</td>
+                                <td>80</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 7 -->
+                            <tr>
+                                <td>04/11/18</td>
+                                <td>115</td>
+                                <td>80</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FOOTER -->
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-purple text-light" data-dismiss="modal" onclick="document.location.reload(true);">Fechar</button>
+                <button type="button" type="submit" class="btn bg-purple text-light" data-toggle="modal" data-target=".modal-novo-pressao">Novo registro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal | Novo Registro Pressão Arterial -->
+<div class="modal fade modal-novo-pressao" tabindex="-1" role="dialog" aria-labelledby="modalNovaPressao" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <form id="form_registro_pressao">
+            <div class="modal-header bg-green rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Nova Medição de Pressão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-group">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <!-- Pressão sistólica -->
+                    <label for="input_sistolica_registro_pressao"></label>
+                    <input id="input_sistolica_registro_pressao" type="text" class="form-control" placeholder="Pressão Sistólica">
+                    <span id="span_ajuda_sistolica_registro_pressao" class="span-ajuda text-danger align-self-start">*Informe valor da pressão sistólica em mmHg (Ex: 120)</span>
+                    <!-- Pressão diastólica -->
+                    <label for="input_diastolica_registro_pressao"></label>
+                    <input id="input_diastolica_registro_pressao" type="text" class="form-control" placeholder="Pressão Diastólica">
+                    <span id="span_ajuda_diastolica_registro_pressao" class="span-ajuda text-danger align-self-start">*Informe valor da pressão diastólica em mmHg (Ex: 80)</span>
+                    <!-- Data do registro -->
+                    <label for="input_data_registro_pressao" class="text-dark"></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">Data da medição</div>
+                        </div>
+                        <input id="input_data_registro_pressao" type="text" placeholder="dd/mm/aaaa" class="form-control">
+                    </div>
+                    <span id="span_ajuda_data_registro_pressao" class="span-ajuda text-danger align-self-start">*Use a formatação DD/MM/AAAA e não se esqueça da /</span>
+                </div>
+            </div>
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-green text-light" data-dismiss="modal">Fechar</button>
+                <button id="btn_salvar_pressao" type="button" class="btn bg-green text-light">Salvar pressão</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal | Atividade Física -->
+<div class="modal fade modal-atividade" tabindex="-1" role="dialog" aria-labelledby="modalAtividade" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <!-- HEADER -->
+            <div class="modal-header bg-purple rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Atividade Física</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- CONTENT -->
+            <div class="modal-body">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <!-- Tabela -->
+                    <table class="table table-responsive-sm text-center">
+                        <thead class="bg-purple text-light">
+                            <!-- Cabeçalho da Tabela -->
+                            <tr>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Calorias</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Remover</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark">
+                            <!-- Exemplo 1 -->
+                            <tr>
+                                <td>07/06/19</td>
+                                <td>Corrida</td>
+                                <td>(1h) 5km</td>
+                                <td>400 cal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 2 -->
+                            <tr>
+                                <td>06/06/19</td>
+                                <td>Corrida</td>
+                                <td>(40min) 4km</td>
+                                <td>320 cal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 3 -->
+                            <tr>
+                                <td>01/06/19</td>
+                                <td>Caminhada</td>
+                                <td>Não sei quantos km</td>
+                                <td>280 cal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 4 -->
+                            <tr>
+                                <td>01/06/19</td>
+                                <td>Musculação</td>
+                                <td>1h</td>
+                                <td>Não definido</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 5 -->
+                            <tr>
+                                <td>27/05/19</td>
+                                <td>Corrida</td>
+                                <td>10 km</td>
+                                <td>800 cal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 6 -->
+                            <tr>
+                                <td>21/05/19</td>
+                                <td>Corrida</td>
+                                <td>6 km</td>
+                                <td>580 cal</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 7 -->
+                            <tr>
+                                <td>20/05/19</td>
+                                <td>Musculação</td>
+                                <td>40 min</td>
+                                <td>Não definido</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                            <!-- Exemplo 8 -->
+                            <tr>
+                                <td>17/05/19</td>
+                                <td>Outro</td>
+                                <td>Futebol (1h)</td>
+                                <td>Não definido</td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FOOTER -->
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-purple text-light" data-dismiss="modal" onclick="document.location.reload(true);">Fechar</button>
+                <button type="button" type="submit" class="btn bg-purple text-light" data-toggle="modal" data-target=".modal-novo-atividade">Nova atividade</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal | Novo Registro de Atividade Física -->
+<div class="modal fade modal-novo-atividade" tabindex="-1" role="dialog" aria-labelledby="modalNovaAtividade" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <form id="form_registro_atividade">
+            <div class="modal-header bg-green rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Nova Atividade Física</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-group">
+                <!-- Container -->
+                <div class="container-fluid">
+                    <!-- Tipo de atividade -->
+                    <label for="select_tipo_registro_atividade"></label>
+                    <select id="select_tipo_registro_atividade" class="form-control">
+                        <option value="">Escolha um tipo</option>
+                        <option value="caminhada">Caminhada</option>
+                        <option value="corrida">Corrida</option>
+                        <option value="pelada">Pelada</option>
+                        <option value="musculacao">Musculação</option>
+                        <option value="natação">Natação</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <span id="span_ajuda_tipo_registro_atividade" class="span-ajuda text-danger align-self-start">*Registre um tipo de atividade.</span>
+                    <!-- Descrição -->
+                    <label for="textarea_descricao_registro_atividade"></label>
+                    <textarea id="textarea_descricao_registro_atividade" rows="5" class="form-control" placeholder="Descrição da atividade"></textarea>
+                    <span id="span_ajuda_descricao_registro_atividade" class="span-ajuda text-danger align-self-start">*Descreva a atividade física.</span>
+                    <!-- Data do registro -->
+                    <label for="input_data_registro_atividade" class="text-dark"></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">Data da atividade</div>
+                        </div>
+                        <input id="input_data_registro_atividade" type="text" class="form-control" placeholder="dd/mm/aaaa">
+                    </div>
+                    <span id="span_ajuda_data_registro_atividade" class="span-ajuda text-danger align-self-start">*Use a formatação DD/MM/AAAA e não se esqueça da /</span>
+                    <!-- Calorias -->
+                    <label for="input_calorias_registro_atividade"></label>
+                    <input id="input_calorias_registro_atividade" type="text" class="form-control" placeholder="Calorias">
+                    <span id="span_ajuda_calorias_registro_atividade" class="span-ajuda text-danger align-self-start">*Informe valor de calorias aproximadas gastas na atividade</span>
+                </div>
+            </div>
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-green text-light" data-dismiss="modal">Fechar</button>
+                <button id="btn_salvar_atividade" type="button" class="btn bg-green text-light">Salvar atividade</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal | PERFIL -->
+<div class="modal fade modal-perfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <form id="form_perfil">
+            <div class="modal-header bg-dark rounded-0">
+                <h5 class="modal-title pl-3 font-weight-bold">Perfil do usuário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form-group">
+                <!-- Container -->
+                <div class="container-fluid">
+                <form>
+                    <table class="table table-responsive-sm">
+                        <tr>
+                            <th colspan="2" class="bg-dark text-light text-center">Dados do usuário</th>
+                        </tr>
+                        <tr>
+                            <td class="text-right" style="width: 55%;">Leonardo Tsuneo Yamamoto</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">tsuuyah@gmail.com</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">Altura: <span>1.70</span>m</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></td>
+                        
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="bg-dark text-light text-center">Mudar senha</th>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><input id="input_senha_antiga_perfil" type="password" class="input-perfil" placeholder="Senha antiga"></td>
+                            <td><svg id="show_hide_senha_antiga_perfil" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><input id="input_senha_nova_perfil" type="password" class="input-perfil" placeholder="Nova senha"></td>
+                            <td><svg id="show_hide_senha_nova_perfil" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><input id="input_senha_nova_confirmar_perfil" type="password" class="input-perfil" placeholder="Confirme senha"></td>
+                            <td><svg id="show_hide_senha_nova_confirmar_perfil" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#563d7c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <span id="span_ajuda_senha_antiga_perfil" class="span-ajuda text-danger">*Senha antiga está incorreta.</span><br />
+                                <span id="span_ajuda_senha_nova_perfil" class="span-ajuda text-danger">*Sua nova senha deve ser composta de no mínimo 6 dígitos, dentre eles pelo menos 1 letra minúscula, 1 maiúscula e 1 númeral.</span><br />
+                                <span id="span_ajuda_senha_nova_confirmar_perfil" class="span-ajuda text-danger">*As senhas novas devem ser idênticas para confirmação.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center"><button id="btn_salvar_nova_senha" type="button" type="submit" class="btn bg-dark text-light">Salvar nova senha</button></td>
+                        </tr>
+                    </table>
+                </form>
+                </div>
+            </div>
+            <div class="modal-footer form-group">
+                <button type="button" class="btn bg-dark text-light" data-dismiss="modal">Fechar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- MODAL ALERT BOX -->
+<div class="modal fade" id="modal_warning" tabindex="-1" role="dialog" aria-labelledby="modalWarning" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <!-- MODAL HEADER -->
+                <div class="modal-header bg-danger rounded-0">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">AVISO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- MODAL BODY -->
+                <div class="modal-body text-dark font-weight-bold">
+                    <span id="span_warning_msg"></span>
+                </div>
+                <!-- MODAL FOOTER -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary bg-danger" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- MODAL SUCCESS BOX -->
+<div class="modal fade" id="modal_success" tabindex="-1" role="dialog" aria-labelledby="modalSuccess" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <!-- MODAL HEADER -->
+            <div class="modal-header bg-success rounded-0">
+                <h5 class="modal-title" id="exampleModalCenterTitle">SUCESSO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- MODAL BODY -->
+            <div class="modal-body text-dark font-weight-bold">
+                <span id="span_success_msg"></span>
+            </div>
+            <!-- MODAL FOOTER -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary bg-success" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER SPACING -->
+<div class="mb-2" style="width: 100%; height: 1px;"></div>
+
+
+    <!-- | CDN | JQuery, Ajax, Bootstrap 4 -->
+    <!-- CDN | JQuery, Ajax e Bootstrap 4 -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Script de Gráfico (Highcharts) -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <!-- LOCAL | Script do Gráfico em Si -->
+    <script src="js/script-chart.js"></script>
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script>
+        // Confirmar saida do Health Track
+        function confirmaSaida() { return 'Você deseja realmente sair da página?' }
+        window.onbeforeunload = confirmaSaida;
+    </script>
+</body>
+<html>
