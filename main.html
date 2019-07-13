@@ -18,53 +18,53 @@
     <!-- Title -->
     <title>Health Track</title>
 </head>
-<body class="bg-green">
+<body class="bg-green text-white font-family-montserrat font-size-15px">
 
 <!-- HEADER -->
-<header class="container-fluid position-fixed bg-dark d-flex justify-content-end align-items-center">
-    <span class="logo mr-auto" style="font-size: 1.5em;">Health Track</span>
-    <span class="align-middle nav-link" data-toggle="modal" data-target=".modal-perfil">Perfil</span>
-    <span class="align-middle nav-link" onclick="location.href='index.html';">Sair</span>
-    <img class="mini-avatar" src="img/tsuneo-avatar-pb-500x500.jpg" alt="mini avatar"/>
+<header class="container-fluid fixed-top h-50px bg-dark d-flex justify-content-end align-items-center">
+    <span class="mr-auto font-size-150 font-family-lobster">Health Track</span>
+    <span class="mr-3 cursor-pointer" data-toggle="modal" data-target=".modal-perfil">Perfil</span>
+    <span class="mr-3 cursor-pointer" onclick="location.href='index.html';">Sair</span>
+    <img class="w-35px rounded-circle" src="img/tsuneo-avatar-pb-500x500.jpg" alt="mini avatar"/>
 </header>
 
 <!-- MAIN CONTAINER -->
-<div class="container main-container">
+<div class="container mt-60px">
 
     <!-- PERFIL -->
-    <div class="row d-flex flex-column justify-content-center align-items-center text-dark">
+    <div class="row mb-2 d-flex flex-column justify-content-center align-items-center text-dark">
         <div class="row">
-            <img src="img/tsuneo-avatar-pb-500x500.jpg" style="width: 84px; height: 84px; border-radius: 50%;" alt="Imagem de Avatar">
-        </div>
-        <div class="row font-weight-bold">
-            <h5 class="font-weight-bold">Leonardo Yamamoto</h4>
+            <img src="img/tsuneo-avatar-pb-500x500.jpg" class="w-84px rounded-circle" alt="Imagem de Avatar">
         </div>
         <div class="row">
-            <span class="span-2">34 anos</span>
+            <span class="font-size-150 font-weight-bold">Leonardo Yamamoto<span>
         </div>
         <div class="row">
-            <span class="span-2">1.70m altura</span>
+            <span class="font-size-110">34 anos</span>
+        </div>
+        <div class="row">
+            <span class="font-size-110">1.70m altura</span>
         </div>
     </div>
 
     <!-- PESO -->
-    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-peso">
+    <div class="row mr-1 ml-1 mb-2 main-link bg-purple cursor-pointer rounded-lg" data-toggle="modal" data-target=".modal-peso">
         <div class="container-fluid">
-            <div class="row pb-2">
+            <div class="row">
                 <!-- ICONE Peso -->
                 <div class="col-md-2 d-flex justify-content-center">
-                    <img class="icon" src="img/Peso-Doodle.png" alt="Icone de Peso" />
+                    <img class="pt-2 pb-2" src="img/Peso-Doodle.png" alt="Icone de Peso" />
                 </div>
                 <!-- Peso Atual -->
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-1">75.9kg</span>
+                    <span class="font-size-150 text-warning">75.9kg</span>
                 </div>
                 <!-- IMC -->
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">IMC: 26.3 | Sobrepeso</span>
+                    <span class="font-size-110 text-warning">IMC: 26.3 | Sobrepeso</span>
                 </div>
                 <!-- Ultimo Registro de Peso -->
-                <div class="col-md d-flex justify-content-center align-items-center">
+                <div class="col-md mb-2 d-flex justify-content-center align-items-center">
                     <span>Último registro: 07/06/2019</span>
                 </div>
             </div>
@@ -73,25 +73,25 @@
 
     <!-- GRÁFICO DE PESO -->
     <div class="row d-flex justify-content-center align-items-center">
-        <div id="chartPeso" style="width: 90%"></div>
+        <div id="chartPeso" class="w-90"></div>
     </div>
 
     <!-- ALIMENTOS CONSUMIDOS -->
-    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-alimento">
+    <div class="row mr-1 ml-1 mb-2 main-link bg-purple cursor-pointer rounded-lg" data-toggle="modal" data-target=".modal-alimento">
         <div class="container-fluid">
 
-            <div class="row pb-2">
+            <div class="row">
                 <!-- ICONE Alimento -->
                 <div class="col-md-2 d-flex justify-content-center">
                     <img src="img/Alimentos-Doodle.png" alt="Icone de Alimento" />
                 </div>
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">(Fruta) Maçã</span>
+                    <span class="font-size-150 text-success">(Fruta) Maçã</span>
                 </div>
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">130g | 85 kcal</span>
+                    <span class="font-size-110 text-success">130g | 85 kcal</span>
                 </div>
-                <div class="col-md d-flex justify-content-center align-items-center">
+                <div class="col-md mb-2 d-flex justify-content-center align-items-center">
                     <span>Último registro: 07/06/2019</span>
                 </div>
             </div>
@@ -99,21 +99,21 @@
     </div>
 
     <!-- PRESSÃO ARTERIAL -->
-    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-pressao">
+    <div class="row mr-1 ml-1 mb-2 main-link bg-purple cursor-pointer rounded-lg" data-toggle="modal" data-target=".modal-pressao">
         <div class="container-fluid">
 
-            <div class="row pb-2">
+            <div class="row">
                 <!-- ICONE Pressão Arterial -->
                 <div class="col-md-2 d-flex justify-content-center">
                     <img src="img/Pressao-Arterial-Doodle.png" alt="Icone de Pressão Arterial" />
                 </div>
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">120 / 80mmHg</span>
+                    <span class="font-size-150 text-success">120 / 80mmHg</span>
                 </div>
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">Normal</span>
+                    <span class="font-size-110 text-success">Normal</span>
                 </div>
-                <div class="col-md d-flex justify-content-center align-items-center">
+                <div class="col-md mb-2 d-flex justify-content-center align-items-center">
                     <span>Último registro: 07/06/2019</span>
                 </div>
             </div>
@@ -121,21 +121,21 @@
     </div>
 
     <!-- ATIVIDADE FÍSICA -->
-    <div class="row main-link bg-purple rounded-lg m-1 mt-2" data-toggle="modal" data-target=".modal-atividade">
+    <div class="row mr-1 ml-1 mb-2 main-link bg-purple cursor-pointer rounded-lg" data-toggle="modal" data-target=".modal-atividade">
         <div class="container-fluid">
 
-            <div class="row pb-2">
+            <div class="row">
                 <!-- ICONE Atividade Física -->
                 <div class="col-md-2 d-flex justify-content-center">
                     <img src="img/Atividades-Fisicas-Doodle.png" alt="Icone de Atividade Física" />
                 </div>
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">Corrida</span>
+                    <span class="font-size-150 text-success">Corrida</span>
                 </div>
                 <div class="col-md d-flex justify-content-center align-items-center">
-                    <span class="span-2">1h | 744 cal</span>
+                    <span class="font-size-110 text-success">1h | 744 cal</span>
                 </div>
-                <div class="col-md d-flex justify-content-center align-items-center">
+                <div class="col-md mb-2 d-flex justify-content-center align-items-center">
                     <span>Último registro: 07/06/2019</span>
                 </div>
             </div>

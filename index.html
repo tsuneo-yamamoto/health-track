@@ -18,14 +18,14 @@
     <!-- Title -->
     <title>Health Track</title>
 </head>
-<body class="bg-green">
+<body class="bg-green font-family-montserrat font-size-15px text-white">
 
 <!-- Page Wrap -->
 <div class="container-fluid d-flex h-100 flex-column justify-content-center align-items-center">
 
     <!-- Logo Health Track -->
     <div class="row">
-        <h1 class="logo mb-3">Health Track</h1>
+        <h1 class="font-family-lobster mb-3">Health Track</h1>
     </div>
 
     <!-- FORMULARIO -->
@@ -33,35 +33,35 @@
 
         <!-- Login | Email -->
         <div class="row">
-            <div class="border-down">
+            <div class="border-bottom-1-green p-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <input id="input_logar_email" type="text" class="input-class" placeholder="E-mail">
+                <input id="input_logar_email" tabindex="2" type="text" class="ml-2 pt-2 border-0 bg-transparent text-dark-grey font-weight-bold" placeholder="E-mail">
             </div>  
         </div>
 
         <!-- Login | Senha -->
-        <div class="row">
-            <div class="border-down">
+        <div class="row mb-1">
+            <div class="border-bottom-1-green p-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="arcs"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                <input id="input_logar_senha" class="input-class" type="password" placeholder="Senha">
+                <input id="input_logar_senha" tabindex="3" class="ml-2 pt-2 border-0 bg-transparent text-dark-grey font-weight-bold" type="password" placeholder="Senha">
             </div>
         </div>
 
         <!-- BTN | Logar -->
         <div class="row d-flex justify-content-center">
-            <button id="btn_logar" type="submit" class="btn-class" style="width: 200px; height: 40px;">Logar</button>
+            <button id="btn_logar" tabindex="4" type="submit" class="mt-4 bg-purple text-white border-0 rounded-lg w-200px h-40px">Logar</button>
         </div>
 
     </form>
 
     <!-- Esqueci minha senha -->
     <div class="row">
-        <span class="nav-link font-weight-bold" style="margin: 0; padding: 0;" data-toggle="modal" data-target=".modal-esqueci-senha">Esqueci minha senha</span>
+        <span class="mt-2 cursor-pointer font-weight-bold" tabindex="5" data-toggle="modal" data-target=".modal-esqueci-senha">Esqueci minha senha</span>
     </div>
     
     <!-- FOOTER | Criar novo usuário -->
     <footer class="row fixed-bottom justify-content-center">
-        <button type="text" class="btn-class" style="width: 170px; height: 35px;" data-toggle="modal" data-target=".modal-novo-usuario">Criar novo usuário</button>
+        <button type="text" tabindex="6" class="mb-2 h-35px bg-purple border-0 rounded-lg text-white" data-toggle="modal" data-target=".modal-novo-usuario"><span class="pr-3 pl-3 mt-3 mb-3">Criar novo usuário</span></button>
     </footer>
     
 
@@ -78,9 +78,9 @@
                 </div>
                 <div class="modal-body d-flex flex-column justify-content-center align-items-center form-group">
                     <!-- E-mail cadastrado -->
-                    <span class="text-dark" style="width: 90%">Informe o e-mail cadastrado para receber sua senha diretamente em seu email.</span>
+                    <span class="text-dark w-90">Informe o e-mail cadastrado para receber sua senha diretamente em seu email.</span>
                     <label for="input_email_esqueci_senha"></label>
-                    <input id="input_email_esqueci_senha" type="text" class="form-control mt-2" style="width: 90%;" placeholder="E-mail cadastrado">
+                    <input id="input_email_esqueci_senha" type="text" class="mt-2 w-90 form-control" placeholder="E-mail cadastrado">
                 </div>
                 <div class="modal-footer form-group">
                     <button type="button" class="btn bg-purple text-light" data-dismiss="modal">Fechar</button>
@@ -139,7 +139,7 @@
                     <span id="span_ajuda_senha_novo_usuario" class="span-ajuda text-danger align-self-start">*Senha deve ser composta de no mínimo 6 dígitos, dentre eles pelo menos 1 letra minúscula, 1 maiúscula e 1 númeral.</span>
                     <span id="span_ajuda_confirmar_senha_novo_usuario" class="span-ajuda text-danger align-self-start">*Senhas devem ser idênticas.</span>
                     <!-- Disclaimer -->
-                    <span id="span_disclaimer" class="text-dark" style="width: 95%;">Ao inscrever-se, você concorda com os <span class="text-primary">Termos de Serviço e a Política de Privacidade</span>, incluindo o <span class="text-primary">Uso de Cookies.</span>
+                    <span class="text-dark mt-2 w-95">Ao inscrever-se, você concorda com os <span class="text-primary">Termos de Serviço e a Política de Privacidade</span>, incluindo o <span class="text-primary">Uso de Cookies.</span>
                 </div>
 
                 <div id="modal_footer_novo_usuario" class="modal-footer form-group">
