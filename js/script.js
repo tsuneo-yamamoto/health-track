@@ -88,12 +88,12 @@ $('#btn_logar').click(function(){
             form_logar.removeAttribute('onsubmit');
         } else {
             $('#span_warning_msg').html('');
-            $('#span_warning_msg').html('Senha não corresponde ao email cadastrado');
+            $('#span_warning_msg').html('Senha deve conter ao menos 6 caracteres, dentre eles ao menos uma letra minúscula, uma maiúscula e um númeral');
             $('#modal_warning').modal('toggle');
         }
     } else {
         $('#span_warning_msg').html('');
-        $('#span_warning_msg').html('Informe o e-mail cadastrado no Health Track');
+        $('#span_warning_msg').html('Informe um e-mail válido');
         $('#modal_warning').modal('toggle');
     }
 });
